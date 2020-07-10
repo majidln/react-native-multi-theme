@@ -1,0 +1,10 @@
+{
+    "light": {
+        "primaryText": "#0b132b",
+        "backgroundColor": "#eff7f6"
+    },
+    "dark": {
+        "primaryText": "#98c1d9",
+        "backgroundColor": "#14213d"
+    }
+}
