@@ -5,20 +5,14 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from './../screens/Home';
 import SettingScreen from './../screens/Setting';
 
-import {theme} from './../providers/themeProvider'
+import MyTabBar from './../components/TabBar'
 
 const Tab = createBottomTabNavigator();
-
-const tabBarOptions = {
-  // activeTintColor: theme.tabBarActiveColor,
-  // inactiveTintColor: theme.primaryText,
-  // style: {backgroundColor: theme.tabBarBackgroundColor, fontWeight: 'bold'},
-}
 
 export default function MainNavigation() {
   return (
     <NavigationContainer>
-      <Tab.Navigator tabBarOptions={tabBarOptions}>
+      <Tab.Navigator tabBar={props => <MyTabBar {...props} />}>
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Settings" component={SettingScreen} />
       </Tab.Navigator>
