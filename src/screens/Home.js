@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import { theme } from './../providers/themeProvider';
+import { withTheme } from './../providers/themeProvider';
 
-function HomeScreen() {
+function HomeScreen({theme}) {
   console.log('theme is', theme)
   return (
     <View style={{...styles.container, backgroundColor: theme.backgroundColor}}>
@@ -22,4 +22,5 @@ const styles = StyleSheet.create({
   }
 })
 
-export default HomeScreen;
+export default withTheme(HomeScreen);
+

@@ -2,10 +2,13 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import MainNavigation from './navigation'
+import { ThemeContextProvider } from './providers/themeProvider';
 
 function App() {
   return (
-    <MainNavigation />
+    <ThemeContextProvider>
+        <MainNavigation />
+    </ThemeContextProvider>
   );
 }
 

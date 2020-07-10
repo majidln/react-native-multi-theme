@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import { theme } from './../providers/themeProvider';
+import { withTheme } from './../providers/themeProvider';
 
-function SettingsScreen() {
+function SettingsScreen({theme}) {
   return (
     <View style={{...styles.container, backgroundColor: theme.backgroundColor}}>
       <Text  style={{...styles.text, color: theme.primaryText}}>Settings!</Text>
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default SettingsScreen;
+export default withTheme(SettingsScreen);
