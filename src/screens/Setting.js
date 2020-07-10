@@ -2,19 +2,18 @@ import * as React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import { withTheme } from './../providers/themeProvider';
 
-function SettingsScreen({theme, setTheme, switchTheme}) {
-
+function SettingsScreen({theme, setTheme, switchTheme, themeID}) {
   return (
     <View style={{...styles.container, backgroundColor: theme.backgroundColor}}>
       <TouchableOpacity style={styles.button} onPress={() => switchTheme()}>
         <Text  style={{...styles.text, color: theme.primaryText}}>Switch Theme</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => setTheme('dark')}>
+      {themeID === 'light' && <TouchableOpacity style={styles.button} onPress={() => setTheme('dark')}>
         <Text  style={{...styles.text, color: theme.primaryText}}>Change To Dark</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => setTheme('light')}>
+      </TouchableOpacity> }
+      {themeID === 'dark' && <TouchableOpacity style={styles.button} onPress={() => setTheme('light')}>
         <Text  style={{...styles.text, color: theme.primaryText}}>Change to light</Text>
-      </TouchableOpacity>
+      </TouchableOpacity>}
     </View>
   );
 }
@@ -22,7 +21,7 @@ function SettingsScreen({theme, setTheme, switchTheme}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   button: {
@@ -30,6 +29,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: 'grey',
     padding: 10,
+    margin: 20
   },
   text: {
     fontSize: 20,
