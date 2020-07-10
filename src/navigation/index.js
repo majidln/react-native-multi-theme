@@ -10,9 +10,9 @@ import {theme} from './../providers/themeProvider'
 const Tab = createBottomTabNavigator();
 
 const tabBarOptions = {
-  activeTintColor: theme.tabBarActiveColor,
-  inactiveTintColor: theme.primaryText,
-  style: {backgroundColor: theme.tabBarBackgroundColor, fontWeight: 'bold'},
+  // activeTintColor: theme.tabBarActiveColor,
+  // inactiveTintColor: theme.primaryText,
+  // style: {backgroundColor: theme.tabBarBackgroundColor, fontWeight: 'bold'},
 }
 
 export default function MainNavigation() {

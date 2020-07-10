@@ -3,7 +3,6 @@ import {Text, View, StyleSheet} from 'react-native';
 import { withTheme } from './../providers/themeProvider';
 
 function HomeScreen({theme}) {
-  console.log('theme is', theme)
   return (
     <View style={{...styles.container, backgroundColor: theme.backgroundColor}}>
       <Text style={{...styles.text, color: theme.primaryText}}>Welcome to change React Native Theme Changer Sample APP</Text>
