@@ -18,7 +18,8 @@ export function withTheme(Component) {
       const { themeID, setThemeID } = useContext(ThemeContext);
   
       const getTheme = themeID => THEMES[themeID];
-      const setTheme = () => setThemeID(themeID === 'light' ? 'dark' : 'light');
+      const switchTheme = () => setThemeID(themeID === 'light' ? 'dark' : 'light');
+      const setTheme = (key) => setThemeID(key);
   
       return (
         <Component
@@ -27,6 +28,7 @@ export function withTheme(Component) {
           theme={getTheme(themeID)}
           themeID={themeID}
           setTheme={setTheme}
+          switchTheme={switchTheme}
         />
       );
     };
