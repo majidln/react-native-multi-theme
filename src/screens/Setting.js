@@ -1,10 +1,12 @@
 import * as React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import { withTheme } from './../providers/themeProvider';
+import MyStatusBar from './../components/StatusBar';
 
 function SettingsScreen({theme, setTheme, switchTheme, themeID}) {
   return (
     <View style={{...styles.container, backgroundColor: theme.backgroundColor}}>
+      <MyStatusBar />
       <TouchableOpacity style={styles.button} onPress={() => switchTheme()}>
         <Text  style={{...styles.text, color: theme.primaryText}}>Switch Theme</Text>
       </TouchableOpacity>

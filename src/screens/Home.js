@@ -1,10 +1,12 @@
 import * as React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import { withTheme } from './../providers/themeProvider';
+import MyStatusBar from './../components/StatusBar';
 
 function HomeScreen({theme}) {
   return (
     <View style={{...styles.container, backgroundColor: theme.backgroundColor}}>
+      <MyStatusBar />
       <Text style={{...styles.text, color: theme.primaryText}}>Welcome to change React Native Theme Changer Sample APP</Text>
     </View>
   );
